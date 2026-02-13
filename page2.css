@@ -1,0 +1,73 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #F9F7F5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    background: white;
+    width: 900px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.image-section {
+    flex: 1;
+    background-color: #E8D5C4;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This keeps your pic from stretching */
+}
+
+.form-section {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 { color: #2D2D2D; margin-bottom: 10px; font-weight: 300; font-size: 2rem; }
+p { color: #777; margin-bottom: 30px; }
+
+.input-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: #4A4A4A; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    background: #FAFAFA;
+}
+
+.main-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2D2D2D;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.main-btn:hover { background: #4A4A4A; }
+
+.toggle-container span {
+    color: #2D2D2D;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
