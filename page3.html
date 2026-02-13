@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Matchmaker | Studio</title>
+    <link rel="stylesheet" href="page3.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">✨</div>
+            <h1>Fashion Matchmaker</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#">History</a>
+            <span class="user-name">Gowripriya M J</span>
+            <button class="sign-out">Sign Out</button>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="card active">
+                <div class="card-header">
+                    <span class="step-num">1</span>
+                    <h3>Your Outfit</h3>
+                </div>
+                <div class="upload-zone" id="drop-zone">
+                    <input type="file" id="file-input" hidden accept="image/*">
+                    <div id="upload-ui">
+                        <div class="upload-icon">📤</div>
+                        <p><strong>Click to upload</strong> or drag and drop</p>
+                    </div>
+                    <img id="preview-img" class="hidden">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="step-num">2</span>
+                    <h3>Preferences</h3>
+                </div>
+                
+                <div class="selection-group">
+                    <label>OCCASION</label>
+                    <div class="pill-grid">
+                        <button class="pill active">Any</button>
+                        <button class="pill">Casual</button>
+                        <button class="pill">Formal</button>
+                        <button class="pill">Party</button>
+                    </div>
+                </div>
+
+                <div class="selection-group">
+                    <label>I'M LOOKING FOR...</label>
+                    <textarea id="search-context" placeholder="shoes, a handbag, and jewelry"></textarea>
+                </div>
+
+                <button class="find-btn" id="generate-btn">
+                    <span class="btn-icon">✨</span> Find Matches
+                </button>
+                <p id="error-msg" class="error-text hidden">Please upload an image first!</p>
+            </div>
+        </aside>
+
+        <main class="canvas">
+            <div id="empty-state" class="vibe-container">
+                <div class="vibe-icon">🌀</div>
+                <h2>Let's Find Your Vibe</h2>
+                <p>Upload your outfit to the left to get started. We'll find pieces that perfectly complement your style.</p>
+            </div>
+
+            <div id="loading-state" class="vibe-container hidden">
+                <div class="spinner"></div>
+                <h2>Curating your style...</h2>
+            </div>
+
+            <div id="result-state" class="result-container hidden">
+                <div class="image-display">
+                    <img id="output-image" src="" alt="AI Suggested Look">
+                    <button class="save-btn" onclick="downloadImage()">Save Look</button>
+                </div>
+                <div class="text-display">
+                    <h3>Your Suggested Match</h3>
+                    <p id="output-desc"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="page3.js"></script>
+</body>
+</html>

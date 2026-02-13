@@ -1,0 +1,68 @@
+:root {
+    --primary-blue: #0081C9;
+    --accent-purple: #7C3AED;
+    --text-dark: #1F2937;
+    --text-gray: #6B7280;
+    --card-bg: #FFFFFF;
+    --sidebar-bg: #F9FAFB;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #F3F4F6;
+    color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { background: linear-gradient(135deg, #7C3AED, #3B82F6); color: white; padding: 8px; border-radius: 10px; }
+.logo h1 { font-size: 1.2rem; margin: 0; }
+
+.sign-out { border: 1px solid #FED7D7; color: #EF4444; background: #FFF5F5; padding: 8px 15px; border-radius: 8px; cursor: pointer; }
+
+/* Layout */
+.main-layout { display: flex; height: calc(100vh - 70px); padding: 20px; gap: 20px; }
+
+.sidebar { width: 350px; display: flex; flex-direction: column; gap: 20px; overflow-y: auto; }
+
+.card { background: white; border-radius: 24px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.step-num { background: #DBEAFE; color: var(--primary-blue); font-weight: bold; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+
+/* Upload Zone */
+.upload-zone { border: 2px dashed #D1D5DB; border-radius: 16px; height: 200px; display: flex; justify-content: center; align-items: center; text-align: center; cursor: pointer; background: #F9FAFB; }
+.upload-icon { font-size: 2rem; margin-bottom: 10px; }
+
+/* Pills */
+.pill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.pill { padding: 10px; border: none; background: #F3F4F6; border-radius: 10px; font-weight: 500; cursor: pointer; transition: 0.2s; }
+.pill.active { background: #9CA3AF; color: white; }
+
+/* Textarea */
+textarea { width: 100%; height: 80px; padding: 12px; border: none; background: #F3F4F6; border-radius: 12px; resize: none; margin-top: 10px; }
+
+/* Find Button */
+.find-btn { width: 100%; padding: 15px; background: white; border: 1px solid #E5E7EB; border-radius: 12px; color: #D1D5DB; font-weight: bold; cursor: not-allowed; margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+.find-btn.ready { background: #F9FAFB; color: var(--text-dark); cursor: pointer; border-color: #D1D5DB; }
+
+/* Canvas Area */
+.canvas { flex: 1; background: white; border-radius: 32px; display: flex; justify-content: center; align-items: center; padding: 60px; }
+.vibe-container { text-align: center; max-width: 500px; }
+.vibe-icon { font-size: 4rem; margin-bottom: 20px; color: #DBEAFE; }
+
+.hidden { display: none !important; }
+
+/* Result Layout */
+.result-container { width: 100%; display: flex; gap: 40px; }
+.image-display { flex: 1; background: #F9FAFB; border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.image-display img { max-width: 100%; }

@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join the Collection | Fashion Match</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="page2.css">
 </head>
 <body>
     <div class="login-container">
         <div class="image-section">
-            <img src="YOUR_IMAGE_NAME.jpg" alt="Fashion Inspiration">
+            <img src="wardrobe.png" alt="Fashion Inspiration" id="tilt-image">
         </div>
 
         <div class="form-section">
             <div class="form-header">
-                <h2 id="form-title">Welcome Back</h2>
+                <h2 id="form-title">Welcome <span>Back</span></h2>
                 <p id="form-subtitle">Find your perfect style match today.</p>
             </div>
 
             <form id="auth-form">
                 <div class="input-group" id="name-group" style="display: none;">
                     <label>Full Name</label>
-                    <input type="text" placeholder="Alex Taylor">
+                    <input type="text" id="user-name" placeholder="Gowripriya M J">
                 </div>
                 
                 <div class="input-group">
@@ -39,6 +39,7 @@
     </div>
 
     <script>
+        // --- 1. Toggle between Login and Signup ---
         function toggleForm() {
             const title = document.getElementById('form-title');
             const subtitle = document.getElementById('form-subtitle');
@@ -46,17 +47,43 @@
             const toggleText = document.getElementById('toggle-text');
 
             if (nameGroup.style.display === "none") {
-                title.innerText = "Curate Your Style";
+                title.innerHTML = "Curate Your <span>Style</span>";
                 subtitle.innerText = "Join our community of fashion enthusiasts.";
                 nameGroup.style.display = "block";
                 toggleText.innerHTML = 'Already have an account? <span onclick="toggleForm()">Sign in</span>';
             } else {
-                title.innerText = "Welcome Back";
+                title.innerHTML = "Welcome <span>Back</span>";
                 subtitle.innerText = "Find your perfect style match today.";
                 nameGroup.style.display = "none";
                 toggleText.innerHTML = 'New to Fashion Match? <span onclick="toggleForm()">Create an account</span>';
             }
         }
+
+        // --- 2. 3D Tilt Effect for the Image ---
+        const container = document.querySelector('.image-section');
+        const image = document.getElementById('tilt-image');
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const mouseX = e.clientX - centerX;
+            const rotateY = (mouseX / (rect.width / 2)) * 15; 
+            image.style.transform = `rotateY(${rotateY}deg)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            image.style.transform = `rotateY(0deg)`;
+        });
+
+        // --- 3. Redirection to Page 3 ---
+        document.getElementById('auth-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Optional: You could save the name to localStorage here to use on Page 3
+            const name = document.getElementById('user-name').value;
+            if(name) localStorage.setItem('userName', name);
+            
+            window.location.href = 'page3.html'; 
+        });
     </script>
 </body>
 </html>
