@@ -16,12 +16,21 @@ Backend
 Node.js – Runtime environment
 node-fetch – API requests to Gemini
 
-Installation commands
+Installation and run commands 
+
+Clone the Repository
+
+git clone https://github.com/Gowripriya156/fashion-matchmaker.git
+cd fashion-matchmaker
+
+npm install
+#Create a .env file in the root directory:
+
+GEMINI_API_KEY=#your_api_key_here#
+
+npm run dev
 
 
-
-
-Run commands
 
 
 
