@@ -2,8 +2,11 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 
-  /* Soft gradient background */
-  background: linear-gradient(135deg, #f8f5f2, #e9e4df);
+   background-image: url("bgi3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   display: flex;
   justify-content: center;
