@@ -22,7 +22,7 @@ Installation commands
 
 
 Run commands
-https://fashion-matchmaker-thh-main.onrender.com/
+
 
 
 Images
@@ -32,6 +32,16 @@ Images
 <img width="554" height="455" alt="thh page3" src="https://github.com/user-attachments/assets/69c2f245-af3b-4fc5-b377-753fb86164ed" />
 
 
+API docs
+Gemini API from Google AI Studio, 2.5-flash
 
+
+Team members
+Gowripriya M J
+Pavithra E K
+
+
+Deployment
+https://fashion-matchmaker-thh-main.onrender.com/
 
 
