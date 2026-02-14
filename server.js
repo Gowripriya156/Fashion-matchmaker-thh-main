@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, '/'))); // Serve static files from r
 app.post('/api/style', async (req, res) => {
     console.log(`Received API request from ${req.ip}`);
     try {
-        const API_KEY = "AIzaSyAGvLE_6mnpeQOjdgEikcaZdiCx8wbNeBs";
+        const API_KEY = "AIzaSyB_tSPI3Z3iX0SK8PTOQ-BVn0XtbqC-94g";
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
         const response = await fetch(API_URL, {
