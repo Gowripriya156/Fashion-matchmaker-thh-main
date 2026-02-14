@@ -52,5 +52,5 @@ app.post('/api/style', async (req, res) => {
 // Start Server
 app.listen(5000, () => {
     console.log(`Server running at http://localhost:${5000}`);
-    console.log(`Open http://localhost:${5000}/page3.html to test.`);
+    console.log(`Open http://localhost:${5000}/ to test.`);
 });
