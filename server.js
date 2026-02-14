@@ -5,7 +5,6 @@ const fetch = require('node-fetch');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -16,8 +15,8 @@ app.use(express.static(path.join(__dirname, '/'))); // Serve static files from r
 app.post('/api/style', async (req, res) => {
     console.log(`Received API request from ${req.ip}`);
     try {
-        const API_KEY = process.env.GEMINI_API_KEY;
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+        const API_KEY = "AIzaSyAGvLE_6mnpeQOjdgEikcaZdiCx8wbNeBs";
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
         const response = await fetch(API_URL, {
             method: 'POST',
@@ -47,7 +46,7 @@ app.post('/api/style', async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-    console.log(`Open http://localhost:${PORT}/page3.html to test.`);
+app.listen(5000, () => {
+    console.log(`Server running at http://localhost:${5000}`);
+    console.log(`Open http://localhost:${5000}/page3.html to test.`);
 });

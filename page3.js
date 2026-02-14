@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultState = document.getElementById("result-state");
 
     // --- 2. CONFIGURATION ---
-    const API_URL = "http://localhost:3000/api/style"; // Secure Proxy (Update to full URL for Live Server compatibility)
+    const API_URL = "http://localhost:5000/api/style"; // Secure Proxy (Update to full URL for Live Server compatibility)
 
     // --- 3. UI HANDLERS ---
     // Load user name from page2's localStorage
