@@ -1,4 +1,5 @@
 Project description
+
 *Fashion Matchmaker | An AI Styling Studio*
 
 An AI-powered fashion styling web application that analyzes uploaded outfit images and generates structured styling recommendations using Google Gemini.
