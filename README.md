@@ -32,7 +32,7 @@ GEMINI_API_KEY=#your_api_key_here#
 npm run dev
 
 
-
+Screen record drive link: https://drive.google.com/drive/folders/1ak36HOGikmkx5e9WTTAPFsoRPn4yBw2C?usp=drive_link
 
 
 Images
