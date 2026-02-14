@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="page2.css">
     <link rel="stylesheet" href="page2.css">
 </head>
+
 <body>
     <div class="login-container">
         <div class="image-section">
-            <img src="wardrobe.png" alt="Fashion Inspiration" id="tilt-image">
+            <img src="wardrobe (1).png" alt="Fashion Inspiration" id="tilt-image">
         </div>
 
         <div class="form-section">
@@ -24,7 +26,7 @@
                     <label>Full Name</label>
                     <input type="text" id="user-name" placeholder="Gowripriya M J">
                 </div>
-                
+
                 <div class="input-group">
                     <label>Email Address</label>
                     <input type="email" placeholder="alex@example.com" required>
@@ -68,7 +70,7 @@
             const rect = container.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const mouseX = e.clientX - centerX;
-            const rotateY = (mouseX / (rect.width / 2)) * 15; 
+            const rotateY = (mouseX / (rect.width / 2)) * 15;
             image.style.transform = `rotateY(${rotateY}deg)`;
         });
 
@@ -77,14 +79,48 @@
         });
 
         // --- 3. Redirection to Page 3 ---
-        document.getElementById('auth-form').addEventListener('submit', function(e) {
+        document.getElementById('auth-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            // Optional: You could save the name to localStorage here to use on Page 3
-            const name = document.getElementById('user-name').value;
-            if(name) localStorage.setItem('userName', name);
-            
-            window.location.href = 'page3.html'; 
+
+            const nameInput = document.getElementById('user-name');
+            const emailInput = document.querySelector('input[type="email"]');
+
+            let finalName = nameInput.value.trim();
+            const email = emailInput.value;
+
+            // If name is empty (e.g. in Login mode), extract from email
+            if (!finalName && email) {
+                // Extract part before @ and capitalize first letter
+                const localPart = email.split('@')[0];
+                finalName = localPart.charAt(0).toUpperCase() + localPart.slice(1);
+            }
+
+            // Fallback
+            if (!finalName) finalName = "Fashion Enthusiast";
+
+            // --- User Persistence ---
+            let users = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+            const existingUserIndex = users.findIndex(u => u.email === email);
+
+            if (existingUserIndex === -1) {
+                // New User
+                users.push({ name: finalName, email: email, joined: new Date().toISOString() });
+            } else {
+                // Returning User
+                users[existingUserIndex].lastLogin = new Date().toISOString();
+                if (nameInput.value.trim()) {
+                    users[existingUserIndex].name = finalName;
+                } else {
+                    finalName = users[existingUserIndex].name;
+                }
+            }
+
+            localStorage.setItem('registeredUsers', JSON.stringify(users));
+            localStorage.setItem('currentUserEmail', email);
+            localStorage.setItem('userName', finalName);
+            window.location.href = 'page3.html';
         });
     </script>
 </body>
+
 </html>
